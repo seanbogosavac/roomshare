@@ -13,7 +13,8 @@ dist/
 build/
 *.egg-info/
 
-
+# Dev notes
+devnotes.md
 
 #A retirer quand j'aurais des tests fonctionnels
 tests/

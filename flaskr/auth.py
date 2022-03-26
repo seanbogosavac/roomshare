@@ -45,7 +45,7 @@ def register():
                 )
                 db.commit()
             except db.IntegrityError:
-                error = f'User {username} is already registered'
+                error = f'User is already registered'
             else:
                 return redirect(url_for("auth.login"))
         
