@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Todo list{% endblock %}</h1>
+  <h1>{% block title %}Shopping list{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('todo.add') }}">Add element</a>
+    <a class="action" href="{{ url_for('shoplist.add') }}">Add element</a>
   {% endif %}
 {% endblock %}
 
 {% block content %}
-  {% for listelement in todolist %}
+  {% for listelement in shoplist %}
     <article class="listelement">
       <header>
         <div>

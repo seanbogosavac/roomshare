@@ -12,3 +12,8 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+
+
+#A retirer quand j'aurais des tests fonctionnels
+tests/

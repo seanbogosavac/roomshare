@@ -1,18 +1,17 @@
-import functools
-from flask import Blueprint, flash, g, redirect, render_template, request, session, url_for
+from flask import Blueprint, flash, g, render_template, request
 from flaskr.auth import login_required
 from flaskr.db import get_db
 
-bp = Blueprint('todo', __name__, url_prefix='/todo')
+bp = Blueprint('shoplist', __name__, url_prefix='/shoplist')
 
 @bp.route('/index', methods=('GET', 'POST'))
 def index():
     db = get_db()
-    todolist = db.execute(
-        'SELECT * FROM todo'
+    shoplist = db.execute(
+        'SELECT * FROM shoplist'
     ).fetchall()
 
-    return render_template('todo/index.html', todolist=todolist)
+    return render_template('shoplist/index.html', shoplist=shoplist)
 
 
 @login_required
@@ -30,8 +29,8 @@ def add():
 
         if error is None:
             db.execute(
-                "INSERT INTO todo (username, text) VALUES (?, ?)", (username, text),
+                "INSERT INTO shoplist (username, text) VALUES (?, ?)", (username, text),
             )
             db.commit()
         
-    return render_template('todo/add.html')
+    return render_template('shoplist/add.html')

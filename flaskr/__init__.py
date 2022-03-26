@@ -23,9 +23,9 @@ def create_app(test_config = None):
         return render_template('index.html')
 
 
-    from . import db, auth, todo
+    from . import db, auth, shoplist
     db.init_app(app)
     app.register_blueprint(auth.bp)
-    app.register_blueprint(todo.bp)
+    app.register_blueprint(shoplist.bp)
 
     return app
